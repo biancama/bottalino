@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NullFX.Controls.FieldChangedEventArgs" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAgAAAAgAA=</HashCode>
+      <FileName>IPAddressControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NullFX.Controls.IPAddressControl" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBQBVFAABCAgASEAAUAEAIAAEAEkCoAAAgAdIBCEAI=</HashCode>
+      <FileName>IPAddressControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="NullFX.Controls.Nmhdr" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>IPAddressControl.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="NullFX.Controls.NmIPAddress" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAgAA=</HashCode>
+      <FileName>IPAddressControl.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="NullFX.Controls.InitCommonControlsEX" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>IPAddressControl.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="NullFX.Controls.IPField" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAIAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPAddressControl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="NullFX.Controls.FieldChangedHandler" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPAddressControl.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

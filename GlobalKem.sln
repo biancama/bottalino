@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottalino", "Bottalino\Bottalino.csproj", "{020AB7B3-A214-40ED-B14D-6F57F353DFA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BottalinoNUnitTest", "BottalinoNUnitTest\BottalinoNUnitTest.csproj", "{5345B32C-A4CC-42EA-85C0-C5F45E7EF9CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BottalinoNUnitTest", "BottalinoNUnitTest\BottalinoNUnitTest.csproj", "{5345B32C-A4CC-42EA-85C0-C5F45E7EF9CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
