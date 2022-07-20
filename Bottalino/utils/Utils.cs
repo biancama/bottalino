@@ -16,5 +16,11 @@ namespace Bottalino.utils
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public static string UnixToDate(int Timestamp, string ConvertFormat)
+        {
+            DateTime ConvertedUnixTime = DateTimeOffset.FromUnixTimeSeconds(Timestamp).DateTime;
+            return ConvertedUnixTime.ToString(ConvertFormat);
+        }
     }
 }

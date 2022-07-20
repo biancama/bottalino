@@ -7,20 +7,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottalino", "Bottalino\Bott
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BottalinoNUnitTest", "BottalinoNUnitTest\BottalinoNUnitTest.csproj", "{5345B32C-A4CC-42EA-85C0-C5F45E7EF9CB}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{16A6EC8C-1B6F-44E8-83FA-2DB38AAB7B07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{020AB7B3-A214-40ED-B14D-6F57F353DFA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{020AB7B3-A214-40ED-B14D-6F57F353DFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020AB7B3-A214-40ED-B14D-6F57F353DFA4}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{020AB7B3-A214-40ED-B14D-6F57F353DFA4}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{020AB7B3-A214-40ED-B14D-6F57F353DFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{020AB7B3-A214-40ED-B14D-6F57F353DFA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5345B32C-A4CC-42EA-85C0-C5F45E7EF9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5345B32C-A4CC-42EA-85C0-C5F45E7EF9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5345B32C-A4CC-42EA-85C0-C5F45E7EF9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5345B32C-A4CC-42EA-85C0-C5F45E7EF9CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16A6EC8C-1B6F-44E8-83FA-2DB38AAB7B07}.Debug|Any CPU.ActiveCfg = Debug
+		{16A6EC8C-1B6F-44E8-83FA-2DB38AAB7B07}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

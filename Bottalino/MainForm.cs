@@ -60,6 +60,62 @@ namespace Bottalino
             File.Delete(localFileName);
         }
 
+        private async Task<bool> CheckStartJob()
+        {
+            string checkStartFile = "inizio.dat";
+            string remoteFolder = Properties.Settings.Default.path;
+            string ftpHost = "ftp://" + Properties.Settings.Default.ftpHost;
+            FtpClient ftpClient = new FtpClient(ftpHost, Properties.Settings.Default.username, Properties.Settings.Default.password);
+            bool isTheJobStarted = await IsRemoteFileCreated(checkStartFile, ftpClient, remoteFolder);
+            if (isTheJobStarted)
+            {               
+                ftpClient.delete(remoteFolder + "/" + checkStartFile);
+            }
+            return isTheJobStarted;
+        }
+
+        private static async Task<bool> IsRemoteFileCreated(string checkStartFile, FtpClient ftpClient, string remoteFolder)
+        {
+            RemoteOperation remoteOperation = new RemoteOperation(ftpClient, remoteFolder);
+            var isTheJobStarted = await remoteOperation.CheckJobStartAsync(checkStartFile);           
+            return isTheJobStarted;
+        }
+
+        private async Task<bool> CheckEndJob()
+        {
+            string checkEndFile = "rapporto.dat";
+            string remoteFolder = Properties.Settings.Default.path;
+            string ftpHost = "ftp://" + Properties.Settings.Default.ftpHost;
+            FtpClient ftpClient = new FtpClient(ftpHost, Properties.Settings.Default.username, Properties.Settings.Default.password);
+            bool isTheJobStarted = await IsRemoteFileCreated(checkEndFile, ftpClient, remoteFolder);
+            if (isTheJobStarted)
+            {
+                SaveRemoteFileLocally(ftpClient, remoteFolder, checkEndFile);
+                ftpClient.delete(remoteFolder + "/" + checkEndFile);
+                
+                MessageBox messageBox = new MessageBox("Processo Bottalino finito !!!");
+                messageBox.ShowDialog();
+                
+            }
+            return isTheJobStarted;
+        }
+
+        private void SaveRemoteFileLocally(FtpClient ftpClient, string remoteFolder, string checkEndFile)
+        {
+            string localFolder = Properties.Settings.Default.serverPath;
+            int Timestamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+            string year = Utils.UnixToDate(Timestamp, "yyyy");
+            string month = Utils.UnixToDate(Timestamp, "MM");
+            string days = Utils.UnixToDate(Timestamp, "dd");
+            string hours= Utils.UnixToDate(Timestamp, "HH");
+            string minutes = Utils.UnixToDate(Timestamp, "mm");
+            string seconds = Utils.UnixToDate(Timestamp, "ss");
+            string folderOfToday = year + "\\" + month + "\\" + days;
+            string fileName = year + "_" + month + "_" + days + "_" + hours + "_" + minutes + "_" + seconds + "_rapporto.dat";
+            Directory.CreateDirectory(localFolder + "\\" + folderOfToday);
+            ftpClient.download(remoteFolder + "/" + checkEndFile, localFolder + "\\" + folderOfToday + "\\" + fileName);
+        }
+
         private void SetUp()
         {
             string randomString = Utils.RandomString(10);
@@ -101,11 +157,22 @@ namespace Bottalino
             configForm.Show();
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
+        private async void buttonSubmit_Click(object sender, EventArgs e)
         {
+            Button button = (sender as Button);
+            button.Enabled = false;
             Ricetta ricetta = GetRicetta();
             string localFileName = CreateInputFile(ricetta);
             UploadInputFileToFtpServer(localFileName);
+            bool isProcessStarted = await CheckStartJob();
+            Console.WriteLine($"isProcessStarted: {isProcessStarted}");
+            if (isProcessStarted)
+            {
+                MessageBox messageBox = new MessageBox("Processo Bottalino iniziato !!!");
+                messageBox.ShowDialog();
+            }
+            bool isProcessEnded = await CheckEndJob();
+            button.Enabled = true;
         }
     }
 }
